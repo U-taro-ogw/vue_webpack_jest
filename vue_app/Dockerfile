@@ -4,7 +4,11 @@ WORKDIR /vue_app
 
 COPY package*.json ./
 
-RUN npm install -g npm @vue/cli
+#RUN npm install -g @vue/cli webpack webpack-cli
+#RUN npm install webpack-dev-server -g
+RUN npm install @vue/cli
+RUN npm install
+
 COPY . ./
 
 EXPOSE 8080
