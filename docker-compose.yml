@@ -7,3 +7,13 @@ services:
       - '8080:8080'
     volumes:
       - ./vue_app:/vue_app
+    links:
+      - dummy_api
+
+  dummy_api:
+    build: ./dummy_api
+    ports:
+      - 3001:3001
+    volumes:
+      - ./dummy_api:/dummy_api
+    command: json-server --watch db.json --host 0.0.0.0 --port 3001
