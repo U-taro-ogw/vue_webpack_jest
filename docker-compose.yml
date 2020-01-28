@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  vue_app:
+    build: ./vue_app
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./vue_app:/vue_app
