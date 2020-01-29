@@ -4,10 +4,7 @@ WORKDIR /vue_app
 
 COPY package*.json ./
 
-#RUN npm install -g @vue/cli webpack webpack-cli
-#RUN npm install webpack-dev-server -g
-RUN npm install @vue/cli
-RUN npm install
+RUN npm install && npm install @vue/cli
 
 COPY . ./
 

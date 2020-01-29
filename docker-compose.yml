@@ -7,6 +7,7 @@ services:
       - '8080:8080'
     volumes:
       - ./vue_app:/vue_app
+      - /vue_app/node_modules
     links:
       - dummy_api
 
