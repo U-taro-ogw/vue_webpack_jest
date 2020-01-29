@@ -3,8 +3,8 @@
 </template>
 
 <script>
-  export default {
-    name: 'Li',
-    props: ['liItem']
-  }
+export default {
+  name: 'Li',
+  props: ['liItem']
+}
 </script>

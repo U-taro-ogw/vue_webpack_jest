@@ -6,12 +6,12 @@
 </template>
 
 <script>
-  import Ul from '@/components/molecules/Ul'
+import Ul from '@/components/molecules/Ul'
 
-  export default {
-    name: 'Header',
-    components: {
-      'Ul': Ul
-    }
+export default {
+  name: 'Header',
+  components: {
+    'Ul': Ul
   }
+}
 </script>

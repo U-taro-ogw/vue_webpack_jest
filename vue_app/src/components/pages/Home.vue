@@ -6,12 +6,12 @@
 </template>
 
 <script>
-  import Header from '@/components/organisms/Header'
+import Header from '@/components/organisms/Header'
 
-  export default {
-    name: 'Home',
-    components: {
-      'Header': Header
-    }
+export default {
+  name: 'Home',
+  components: {
+    'Header': Header
   }
+}
 </script>
