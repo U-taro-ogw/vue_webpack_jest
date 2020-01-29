@@ -1,25 +1,16 @@
 <template>
-  <div>
-    <ul id="ul-1">
-      <Li  v-for="(item, key, index) in items" :key="index" v-bind:li-item="item"/>
-    </ul>
-  </div>
+  <ul id="ul">
+    <LiItem />
+  </ul>
 </template>
 
 <script>
-import Li from '@/components/atoms/Li'
+  import LiItem from '../atoms/LiItem'
 
-export default {
-  name: 'Ul',
-  components: {
-    'Li': Li
-  },
-  data: () => {
-    return {
-      items: []
+  export default {
+    name: 'Ul',
+    components: {
+      'LiItem': LiItem
     }
-  },
-  mounted () {
   }
-}
 </script>

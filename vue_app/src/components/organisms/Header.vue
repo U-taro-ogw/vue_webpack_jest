@@ -1,17 +1,16 @@
 <template>
   <div id="header">
-    <p>This is Header</p>
-    <Ul/>
+    <HeaderWithImage />
   </div>
 </template>
 
 <script>
-import Ul from '@/components/molecules/Ul'
+  import HeaderWithImage from '../molecules/HeaderWithImage'
 
-export default {
-  name: 'Header',
-  components: {
-    'Ul': Ul
+  export default {
+    name: 'Header',
+    components: {
+      'HeaderWithImage': HeaderWithImage
+    }
   }
-}
 </script>

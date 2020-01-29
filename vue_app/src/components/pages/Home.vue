@@ -1,17 +1,19 @@
 <template>
   <div id="home">
-    <h1>Home</h1>
-    <Header/>
+    <Header />
+    <Body />
   </div>
 </template>
 
 <script>
-import Header from '@/components/organisms/Header'
+  import Header from '../organisms/Header'
+  import Body from '../organisms/Body'
 
-export default {
-  name: 'Home',
-  components: {
-    'Header': Header
+  export default {
+    name: 'Home',
+    components: {
+      "Header": Header,
+      "Body": Body
+    }
   }
-}
 </script>
