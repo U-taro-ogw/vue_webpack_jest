@@ -23,10 +23,6 @@
         listItems: []
       }
     },
-    created: {
-    },
-    mounted: {
-    },
     methods: {
       getAxios() {
         return axios.get('http://localhost:3001/isekai').then((res) => {
