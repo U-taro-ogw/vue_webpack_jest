@@ -1,5 +1,5 @@
 <template>
-  <li>{{item}}</li>
+  <li>{{item.id}} : {{item.name}}</li>
 </template>
 
 <script>
@@ -7,7 +7,13 @@
     name: 'LiItem',
     data() {
       return {
-        item: "test-item-01"
+        // item: ""
+      }
+    },
+    props: {
+      'item': {
+        type: Object,
+        default: {}
       }
     }
   }

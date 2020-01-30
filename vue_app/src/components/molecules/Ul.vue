@@ -1,6 +1,6 @@
 <template>
   <ul id="ul">
-    <LiItem />
+    <LiItem v-for="item in listItem" :item="item" />
   </ul>
 </template>
 
@@ -11,6 +11,12 @@
     name: 'Ul',
     components: {
       'LiItem': LiItem
+    },
+    props: {
+      'listItem': {
+        type: Array,
+        default: []
+      }
     }
   }
 </script>

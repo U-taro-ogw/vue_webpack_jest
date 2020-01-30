@@ -1,6 +1,6 @@
 <template>
   <div id="body">
-    <Ul />
+    <Ul :listItem="listItem" />
   </div>
 </template>
 
@@ -11,6 +11,12 @@
     name: 'Body',
     components: {
       'Ul': Ul
+    },
+    props:{
+      'listItem': {
+        type: Array,
+        default: []
+      }
     }
   }
 </script>
