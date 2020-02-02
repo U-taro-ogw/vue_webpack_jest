@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <Header />
-    <input @click="getAxios" type="button" value="fetch">
+<!--    <input @click="fetchApi" type="button" value="fetch">-->
     <Body :listItem="listItems" />
   </div>
 </template>
@@ -23,12 +23,19 @@
         listItems: []
       }
     },
+    created: function () {
+      this.fetchApi()
+    },
+    // mounted() {
+    //   this.fetchApi()
+    // },
     methods: {
-      getAxios() {
-        return axios.get('http://localhost:3001/isekai').then((res) => {
+      fetchApi() {
+        axios.get('http://localhost:3001/isekai').then((res) => {
           this.listItems = res.data.kono_suba.characters
         })
       }
     }
+
   }
 </script>

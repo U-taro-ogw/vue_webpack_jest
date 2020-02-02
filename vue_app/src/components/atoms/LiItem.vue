@@ -1,5 +1,5 @@
 <template>
-  <li>{{item.id}} : {{item.name}}</li>
+  <li class="li-item">{{item.id}} : {{item.name}}</li>
 </template>
 
 <script>
