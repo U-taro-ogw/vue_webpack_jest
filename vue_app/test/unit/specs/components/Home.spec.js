@@ -5,6 +5,9 @@ import flushPromises from 'flush-promises'
 import { mount, shallowMount } from '@vue/test-utils'
 import Component from '@/components/pages/Home'
 
+import fs from 'fs'
+import path from 'path'
+
 describe('Home', () => {
   let mockAxios
 
@@ -13,33 +16,22 @@ describe('Home', () => {
   })
 
   describe('API通信に成功した場合', () => {
+    let stubResponse = JSON.parse(fs.readFileSync(path.join(__dirname, '../../stubs/isekai/success.json')))
+    let requestInfo
     beforeEach(() => {
-      mockAxios.onGet('http://localhost:3001/isekai').reply(200, {
-        kono_suba: {
-          characters: [
-            {
-              id: 1,
-              name: "test-1"
-            },
-            {
-              id: 2,
-              name: "test-2"
-            },
-            {
-              id: 3,
-              name: "test-3"
-            }
-          ]
-        }
+      mockAxios.onGet('http://localhost:3001/isekai').reply((config) => {
+        requestInfo = config
+        return [200, stubResponse]
       })
     })
 
-    it('test', async () => {
+    it('listItemsに格納する', async () => {
       const wrapper = shallowMount(Component)
 
-      await flushPromises
+      await flushPromises()
+
       expect(wrapper.find('#home').exists()).toBeTruthy()
-      expect(wrapper.vm.$data.listItems).toEqual(1)
+      expect(wrapper.vm.$data.listItems).toEqual(stubResponse.kono_suba.characters)
     })
   })
 })
