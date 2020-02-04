@@ -2,7 +2,7 @@ import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter';
 import flushPromises from 'flush-promises'
 
-import { mount, shallowMount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import Component from '@/components/pages/Home'
 
 import fs from 'fs'

@@ -26,9 +26,6 @@
     created: function () {
       this.fetchApi()
     },
-    // mounted() {
-    //   this.fetchApi()
-    // },
     methods: {
       fetchApi() {
         axios.get('http://localhost:3001/isekai').then((res) => {
